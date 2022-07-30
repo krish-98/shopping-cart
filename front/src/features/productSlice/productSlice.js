@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 const initialState = {
   items: [],
   status: null,
+  error: null,
 }
 
 export const productsFetch = createAsyncThunk(
@@ -19,19 +20,18 @@ const productSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [productsFetch.pending]: (state, action) => {
+    [productsFetch.pending]: (state) => {
       state.status = "pending"
     },
     [productsFetch.fulfilled]: (state, action) => {
       state.status = "success"
       state.items = action.payload
     },
-    [productsFetch.rejected]: (state, action) => {
+    [productsFetch.rejected]: (state) => {
       state.status = "failed"
+      state.error = "Error occurred"
     },
   },
 })
 
 export default productSlice.reducer
-
-export const { singleProductFetch } = productSlice.actions

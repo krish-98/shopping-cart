@@ -10,16 +10,14 @@ import { productsFetch } from "./features/productSlice/productSlice"
 
 function App() {
   const dispatch = useDispatch()
-  const { items } = useSelector((state) => state.product)
 
   useEffect(() => {
     dispatch(productsFetch())
-  }, [dispatch])
+  }, [])
 
   return (
-    <div className="bg-black h-screen text-white">
+    <div>
       <Navbar />
-      {JSON.stringify(items)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="cart" element={<Cart />} />
