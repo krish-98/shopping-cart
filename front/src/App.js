@@ -5,16 +5,7 @@ import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import NotFound from "./components/NotFound"
 
-import { useDispatch, useSelector } from "react-redux"
-import { productsFetch } from "./features/productSlice/productSlice"
-
 function App() {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(productsFetch())
-  }, [])
-
   return (
     <div>
       <Navbar />
