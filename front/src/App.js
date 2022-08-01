@@ -1,9 +1,10 @@
-import { useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 import Cart from "./components/Cart"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import NotFound from "./components/NotFound"
+
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   return (
