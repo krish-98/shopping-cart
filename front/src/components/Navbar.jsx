@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { RiShoppingCart2Fill } from "react-icons/ri"
 import { Link, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const { cartTotalQuantity } = useSelector((state) => state.cart)
   const navigate = useNavigate()
 
   return (
@@ -19,7 +22,7 @@ const Navbar = () => {
           >
             <RiShoppingCart2Fill className="w-10 h-6" />
             <span className="absolute bottom-4 left-5 bg-orange-400 h-5 w-5 text-sm rounded-full text-center">
-              4
+              {cartTotalQuantity}
             </span>
           </div>
         </div>

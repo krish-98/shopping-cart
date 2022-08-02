@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { productsFetch } from "../features/productSlice/productSlice"
-import { addToCart } from "../features/cartSlice.js/cartSlice"
+import { addToCart, getTotals } from "../features/cartSlice.js/cartSlice"
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -9,6 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(productsFetch())
+    dispatch(getTotals())
   }, [dispatch])
 
   const handleAddToCart = (product) => {

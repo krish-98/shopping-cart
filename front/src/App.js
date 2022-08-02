@@ -5,8 +5,17 @@ import Navbar from "./components/Navbar"
 import NotFound from "./components/NotFound"
 
 import "react-toastify/dist/ReactToastify.css"
+import { useDispatch } from "react-redux"
+import { getTotals } from "./features/cartSlice.js/cartSlice"
+import { useEffect } from "react"
 
 function App() {
+  // const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   dispatch(getTotals())
+  // }, [dispatch])
+
   return (
     <div>
       <Navbar />
